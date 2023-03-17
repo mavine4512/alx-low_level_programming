@@ -7,11 +7,11 @@
  */
 int main(void)
 {
-	int num[10] = "0123456789"
 	int i;
 
 	for (i = 0; i < 10; i++)
-		printf("%d", num[i]);
-	printf("\n");
+	{
+		printf("%d\n", i);
+	}
 	return (0);
 }
