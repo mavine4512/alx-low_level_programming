@@ -8,12 +8,13 @@
  */
 int main()
 {
+	char M[10] = "0123456789";
 	int n;
 	
 	for (n = 0; n < 10; n++)
 	{
-		printf(n);
+		printf(M[n]);
 	}
-	printf('\n');
+	printf("\n");
 	return (0);
 }
