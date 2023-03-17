@@ -16,9 +16,9 @@ int main(void)
 		putchar(low[i]);
 	}
 	for (i = 0; i < 26; i++)
-        {
-                putchar(upp[i]);
-        }
+	{
+		putchar(upp[i]);
+	}
 	putchar('\n');
 	return (0);
 }
