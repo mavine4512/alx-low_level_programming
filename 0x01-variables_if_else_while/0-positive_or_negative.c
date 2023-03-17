@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* *
+/**
  * Main- Determines if the number is positive , nagative or zero
  *
  * Return: always 0 (Success)
