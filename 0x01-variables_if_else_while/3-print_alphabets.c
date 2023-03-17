@@ -13,9 +13,12 @@ int main(void)
 
 	for (i = 0; i < 26; i++)
 	{
-		putchar(low[i]);
-		putchar(upp[i]);
+		putchar(low[i])
 	}
+	for (i = 0; i < 26; i++)
+        {
+                putchar(upp[i]);
+        }
 	putchar('\n');
 	return (0);
 }
