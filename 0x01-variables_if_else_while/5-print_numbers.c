@@ -6,14 +6,11 @@
  *
  * Return: Always 0 (Success)
  */
-int main()
+int main(void)
 {
-	char M[10] = "0123456789";
-	int n;
-	
-	for (n = 0; n < 10; n++)
+	for (int i = 0; i < 10; i++)
 	{
-		printf(M[n]);
+		printf(i);
 	}
 	printf("\n");
 	return (0);
