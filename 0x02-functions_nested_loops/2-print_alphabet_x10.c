@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_alphabet - print the alphabet in lowercase ten time
+ * print_alphabet_x10 - print the alphabet in lowercase ten time
  *
  * Return: void
  */
@@ -19,6 +19,6 @@ void print_alphabet_x10(void)
 		{
 			putchar(alp[i]);
 		}
+		putchar('\n');
 	}
-	putchar('\n');
 }
