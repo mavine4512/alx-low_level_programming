@@ -9,13 +9,13 @@
 void print_alphabet_x10(void)
 {
 	char alp[26] = "abcdefghijklmnopqrstuvwxyz";
-	int i,x;
+	int i, x;
 
 	for (i = 0; i < 10; i++)
 	{
 		for (x = 0; x < 26; x++)
 		{
-			putchar(alp[i]);
+			putchar(alp[x]);
 		}
 		 putchar('\n');
 	}
