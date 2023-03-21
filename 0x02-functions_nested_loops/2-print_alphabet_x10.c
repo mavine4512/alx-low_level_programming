@@ -11,11 +11,11 @@ void print_alphabet_x10(void)
 	char alp[26] = "abcdefghijklmnopqrstuvwxyz";
 	int i;
 
-	for (i = 0; i < 26; i++)
+	for (i = 0; i < 10; i++)
 	{
 		int x;
 
-		for (x = 0; x < 10; x++)
+		for (x = 0; x < 26; x++)
 		{
 			putchar(alp[i]);
 		}
