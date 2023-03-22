@@ -2,7 +2,6 @@
 
 /**
  * main - testing function that print if interger is positive or nagative
- *
  * Return: 0
  */
 int main(void)
