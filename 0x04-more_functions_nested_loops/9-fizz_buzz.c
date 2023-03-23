@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -13,20 +14,22 @@ int main(void)
 	{
 		if ((i / 15) == 0)
 		{
-			_putchar('FizzBuzz');
+			printf("FizzBuzz");
 		}
 		else if ((i / 3) == 0)
 		{
-			_putchar('Fizz');
+			printf("Fizz");
 		}
 		else if ((i / 5) == 0)
 		{
-			_putchar('Buzz');
+			printf("Buzz");
 		}
 		else
 		{
-			_putchar(i);
+			printf("%d", i);
 		}
-		_putchar('\n');
 	}
+	printf("\n");
+
+	return (0);
 }
