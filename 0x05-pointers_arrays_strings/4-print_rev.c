@@ -6,13 +6,20 @@
  */
 void print_rev(char *s)
 {
-	int len = strlen(str);
-	char reversed_str[len + 1];
+	int i, j, len;
 
-	for (i = 0; i < len; i++)
+	i = 0;
+
+	while (s[i] != '\0')
 	{
-		reversed_str[len - i - 1];
+		i++;
 	}
-	reversed_str[len] = '\0';
+	len = i;
+
+	for (j = len - 1; j >= 0; j--)
+	{
+		_putchar(s[j]);
+	}
+
 	_putchar('\n');
 }
