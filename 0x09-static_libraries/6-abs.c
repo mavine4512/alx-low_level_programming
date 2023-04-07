@@ -8,12 +8,10 @@
 int _abs(int a)
 {
 	int k = a;
-	int abaValue;
 
 	if (k < 0)
 	{
 		k = k * (-1);
 	}
-	absValue = k;
-	return (absValue);
+	return (k);
 }
