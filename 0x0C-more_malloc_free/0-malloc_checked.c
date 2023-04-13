@@ -8,10 +8,10 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	void *mem;
+	void *mem; /*variable of a pointer for memory*/
 
 	mem = malloc(b); /*allocated memory by used of malloc function*/
 	if (mem == 0)
-		exit(98); /* check if memory is null or zero to exit the program*/
+		exit(98); /*check if memory is NULL or zero to exit the program*/
 	return (mem);
 }
