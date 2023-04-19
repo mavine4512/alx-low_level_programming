@@ -16,5 +16,5 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 
 	for (i = 0; i < size; i++)
 		action(array[i]);
-	/*loop array and applies the fun pointed to by action to each element of array*/
+	/*loop arr and applies the fun pointed to by action to each element of arr*/
 }
