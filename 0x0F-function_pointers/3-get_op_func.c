@@ -1,6 +1,6 @@
 #include "3-calc.h"
 
-/*
+/**
  * get_op_func - select the correct operation function asked by user
  * @s: operatior argument
  * Return: function pointer corresponding to operator given
