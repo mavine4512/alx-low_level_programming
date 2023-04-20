@@ -9,9 +9,9 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
-	va_last last;
+	va_list list;
 
-	va_start(last, n);
+	va_start(list, n);
 	for (i = 0; i < n; i++)
 	{
 		printf("%d", va_arg(list, int));
