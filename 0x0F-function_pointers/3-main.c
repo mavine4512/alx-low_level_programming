@@ -17,6 +17,11 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
+	if (argv[2][1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
 
 	arg1 = atoi(argv[1]);
 	arg2 = atoi(argv[3]);
@@ -24,12 +29,6 @@ int main(int argc, char *argv[])
 	func = get_op_func(argv[2]);
 
 	if (!func)
-	{
-		printf("Error\n");
-		exit(99);
-	}
-
-	if (argv[2][1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
