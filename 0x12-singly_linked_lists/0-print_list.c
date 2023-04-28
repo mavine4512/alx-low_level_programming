@@ -10,11 +10,9 @@ size_t print_list(const list_t *h)
 {
 	/*Initialize a variable to keep track of the number of nodes printed*/
 	size_t num_nodes_printed = 0;
-
 	/*Loop through each node in the linked list*/
 	while (h != NULL)
 	{
-		/*Check through each node in the linked list*/
 		if (h->str == NULL)
 			printf("[0] (nil)\n");/*if it is NULL, print "(nil)*/
 		else
