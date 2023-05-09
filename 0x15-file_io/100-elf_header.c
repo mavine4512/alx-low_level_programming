@@ -1,6 +1,6 @@
 #include <elf.h>
-#include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/types.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -33,7 +33,7 @@ void check_elf(unsigned char *e_ident)
 				e_ident[index] != 'L' &&
 				e_ident[index] != 'F')
 		{
-			dprintf(STDER_FILENO, "Error: Not an ELF file\n");
+			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
 		}
 	}
@@ -69,7 +69,7 @@ void print_class(unsigned char *e_ident)
 {
 	printf(" Class:		");
 
-	switch (e_ident[EL_CLASS])
+	switch (e_ident[EI_CLASS])
 	{
 		case ELFCLASSNONE:
 			printf("none\n");
@@ -81,7 +81,7 @@ void print_class(unsigned char *e_ident)
 			printf("ELF64\n");
 			break;
 		default:
-			print(" <unknown: %x>\n", e_ident[EL_CLASS]);
+			printf(" <unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
 
@@ -93,7 +93,7 @@ void print_data(unsigned char *e_ident)
 {
 	printf(" Data: ");
 
-	switch (e_ident[EL_DATA])
+	switch (e_ident[EI_DATA])
 	{
 		case ELFDATANONE:
 			printf("none\n");
@@ -105,7 +105,7 @@ void print_data(unsigned char *e_ident)
 			printf("2's complement, big endian\n");
 			break;
 		default:
-			printf(" <unknown: %x>\n", e_ident[EL_CLASS]);
+			printf(" <unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
 
@@ -116,9 +116,9 @@ void print_data(unsigned char *e_ident)
 void print_version(unsigned char *e_ident)
 {
 	printf(" Version: %d",
-			e_ident[EL_VERSION]);
+			e_ident[EI_VERSION]);
 
-	switch (e_ident[EL_VERSION])
+	switch (e_ident[EI_VERSION])
 	{
 		case EV_CURRENT:
 			printf(" (current)\n");
@@ -137,7 +137,7 @@ void print_osabi(unsigned char *e_ident)
 {
 	printf(" OS/ABI: ");
 
-	switch (e_ident[EL_OSABI])
+	switch (e_ident[EI_OSABI])
 	{
 		case ELFOSABI_NONE:
 			printf("UNIX - System V\n ");
@@ -152,7 +152,7 @@ void print_osabi(unsigned char *e_ident)
 			printf("UNIX - Linux\n");
 			break;
 		case ELFOSABI_SOLARIS:
-			print("UNIX - Solaris\n");
+			printf("UNIX - Solaris\n");
 			break;
 		case ELFOSABI_IRIX:
 			printf("UNIX - IRIX\n");
@@ -170,7 +170,7 @@ void print_osabi(unsigned char *e_ident)
 			printf("Standalone App\n");
 			break;
 		default:
-			printf("<unknown: %x>\n", e_ident[EL_OSABI]);
+			printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 
 	}
 }
@@ -238,7 +238,7 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 	if (e_ident[EI_CLASS] == ELFCLASS32)
 		printf("%#x\n", (unsigned int)e_entry);
 	else
-		printf("%#x\n", e_entry);
+		printf("%#lx\n", e_entry);
 }
 
 /**
@@ -289,7 +289,7 @@ int main(int __attribute__((__unused__))argc, char *argv[])
 	{
 		free(header);
 		close_elf(o);
-		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", arg[1]);
+		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
 
