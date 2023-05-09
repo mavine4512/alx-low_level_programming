@@ -26,7 +26,7 @@ void check_elf(unsigned char *e_ident)
 {
 	int index;
 
-	for (index = 0; index < 4; index ++)
+	for (index = 0; index < 4; index++)
 	{
 		if (e_ident[index] != 127 &&
 				e_ident[index] != 'E' &&
@@ -231,11 +231,11 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
-		e_entry = ((e_entry << 8) & 0xFF00FF00)|
+		e_entry = ((e_entry << 8) & 0xFF00FF00) |
 			((e_entry >> 8) & 0xFF00FF);
-		e_entry = (e_entry << 16)|(e_entry >> 16);
+		e_entry = (e_entry << 16) | (e_entry >> 16);
 	}
-	if(e_ident[EI_CLASS] == ELFCLASS32)
+	if (e_ident[EI_CLASS] == ELFCLASS32)
 		printf("%#x\n", (unsigned int)e_entry);
 	else
 		printf("%#x\n", e_entry);
@@ -274,14 +274,14 @@ int main(int __attribute__((__unused__))argc, char *argv[])
 
 	if (o == -1)
 	{
-		dprintf(STDERR_FILENO,"Error: Cant read file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Cant read file %s\n", argv[1]);
 		exit(98);
 	}
 	header = malloc(sizeof(Elf64_Ehdr));
 	if (header == NULL)
 	{
 		close_elf(o);
-		dprintf(STDERR_FILENO,"Error: Cant read file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Cant read file %s\n", argv[1]);
 		exit(98);
 	}
 	r = read(o, header, sizeof(Elf64_Ehdr));
@@ -289,7 +289,7 @@ int main(int __attribute__((__unused__))argc, char *argv[])
 	{
 		free(header);
 		close_elf(o);
-		dprintf(STDERR_FILENO,"Error: `%s`: No such file\n", arg[1]);
+		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", arg[1]);
 		exit(98);
 	}
 
@@ -306,5 +306,5 @@ int main(int __attribute__((__unused__))argc, char *argv[])
 
 	free(header);
 	close_elf(o);
-	return(0);
+	return (0);
 }
