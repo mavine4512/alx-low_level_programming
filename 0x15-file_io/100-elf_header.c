@@ -46,7 +46,7 @@ void print_magic(unsigned char *e_ident)
 {
 	int i;
 
-	printf(" Magic:		");
+	printf(" Magic:   ");
 
 	for (i = 0; i < EI_NIDENT; i++)
 	{
