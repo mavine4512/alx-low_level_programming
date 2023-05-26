@@ -195,7 +195,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 		e_type >>= 8;
 	}
 
-	printf(" Type:			");
+	printf(" Type:				");
 
 	switch (e_type)
 	{
@@ -227,7 +227,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
-	printf(" ENTRY point address:		");
+	printf(" ENTRY point address:			");
 
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
