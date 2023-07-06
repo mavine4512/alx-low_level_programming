@@ -21,7 +21,7 @@ unsigned int binary_to_uint(const char *b)
 	}
 
 	for (i = 0; *(b + i) != '\0'; i++)
-		num += ((*(b + i) - '0') * (1 << (len -i - 1)));
+		num += ((*(b + i) - '0') * (1 << (len - i - 1)));
 
 	return (num);
 }
