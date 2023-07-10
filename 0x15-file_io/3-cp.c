@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	if (to_fd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-                exit(99);
+		exit(99);
 	}
 	from_fd = open(argv[1], O_RDONLY);
 	if (from_fd < 0)
@@ -75,7 +75,7 @@ void copy_contents(int from_fd, int to_fd, char *src_file, char *dest_file)
 			if (c < 0)
 			{
 				dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
-                exit(98);
+				exit(98);
 			}
 			if (write(to_fd, buf, c) != c)
 			{
