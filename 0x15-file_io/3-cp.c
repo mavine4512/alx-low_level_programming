@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "USAGE: cp file_from file_to\n");
 		exit(97);
 	}
-	to_fd = open(arg[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	to_fd = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (to_fd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
@@ -69,7 +69,7 @@ void copy_contents(int from_fd, int to_fd, char *src_file, char *dest_file)
 	{
 		for (i = 0; ; i += buf_size)
 		{
-			c = read(from_fd, buf, buf_size)
+			c = read(from_fd, buf, buf_size);
 			if (c == 0)
 				break;
 			if (c < 0)
