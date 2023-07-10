@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "USAGE: cp file_form file_to\n");
+		dprintf(STDERR_FILENO, "USAGE: cp file_from file_to\n");
 		exit(97);
 	}
 	to_fd = open(arg[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
@@ -74,7 +74,7 @@ void copy_contents(int from_fd, int to_fd, char *src_file, char *dest_file)
 				break;
 			if (c < 0)
 			{
-				dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+				dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_file);
 				exit(98);
 			}
 			if (write(to_fd, buf, c) != c)
