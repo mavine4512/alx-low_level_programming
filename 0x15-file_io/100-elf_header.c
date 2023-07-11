@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		close_fd(fd);
-		write(STDERR_FILENO, "Invalid ELF header\n", 20);
+		write(STDERR_FILENO, "Invalid ELF header.\n", 20);
 		exit(98);
 	}
 	close_fd(fd);
@@ -137,7 +137,7 @@ void print_elf_header(void *header)
 }
 
 /**
- * print_section _ Print the content of a section in the ELF header
+ * print_section - Print the content of a section in the ELF header
  * @id: The id of the section
  * @header: The pointer to the ELF header
  */
