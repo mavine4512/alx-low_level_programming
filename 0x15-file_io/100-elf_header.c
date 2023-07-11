@@ -88,7 +88,7 @@ char is_elf_file(int fd, void **header)
 				}
 				else
 				{
-					free(*haader);
+					free(*header);
 					close_fd(fd);
 					write(STDERR_FILENO, "Incomplete ELF header.\n", 23);
 					exit(98);
@@ -329,11 +329,11 @@ void print_type(void *header)
  */
 void print_entry_pt_addr(void *header)
 {
-	int i, j, k = 0, can_print = 0 offset = 0X18;
+	int i, j, k = 0, can_print = 0, offset = 0X18;
 	int val_len = *((unsigned char *)header + 4) == ELFDATA2LSB ? 4 : 8;
 	int is_le = *((unsigned char *)header + 0x05) == ELFDATA2LSB;
 
-	print("0x");
+	printf("0x");
 	for (i = 0; i < val_len; i++)
 	{
 		j = is_le ? val_len - i - 1 : i;
@@ -349,16 +349,6 @@ void print_entry_pt_addr(void *header)
 		}
 	}
 	if (!can_print)
-		printf(0);
+		printf("0");
 	printf("\n");
 }
-
-
-
-
-
-
-
-
-
-
