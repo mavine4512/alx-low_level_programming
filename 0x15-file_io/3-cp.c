@@ -10,7 +10,7 @@
  * main - Copies the content of a file to another file
  * @argc: The number of arguments
  * @argv: The arguments
- * Return : 0 if successful, otherwise a number between 97 and
+ * Return: 0 if successful, otherwise a number between 97 and
  * 100 (each number represents an error)
  */
 int main(int argc, char *argv[])
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "USAGE: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	to_fd = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 	if (from_fd < 0)
 	{
 		close_fd(to_fd);
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	copy_contents(from_fd, to_fd, argv[1], argv[2]);
