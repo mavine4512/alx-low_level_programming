@@ -134,8 +134,8 @@ void print_version(unsigned char *e_ident)
  * @e_ident: A pointer to an array containing the ELF version.
  */
 void print_osabi(unsigned char *e_ident)
-{
-	printf("   OS/ABI:                            ");
+{	
+	printf("   OS/ABI:                             ");
 
 	switch (e_ident[EI_OSABI])
 	{
