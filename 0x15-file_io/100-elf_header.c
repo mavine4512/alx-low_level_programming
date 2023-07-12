@@ -29,9 +29,9 @@ void check_elf(unsigned char *e_ident)
 	for (index = 0; index < 4; index++)
 	{
 		if (e_ident[index] != 127 &&
-			e_ident[index] != 'E' &&
-			e_ident[index] != 'L' &&
-			e_ident[index] != 'F')
+		    e_ident[index] != 'E' &&
+		    e_ident[index] != 'L' &&
+		    e_ident[index] != 'F')
 		{
 			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
@@ -74,14 +74,14 @@ void print_class(unsigned char *e_ident)
 		case ELFCLASSNONE:
 		printf("none\n");
 		break;
-		case ELFCLASS32:
-			printf("ELF32\n");
-			break;
-		case ELFCLASS64:
-			printf("ELF64\n");
-			break;
-		default:
-			printf("<unknown: %x>\n", e_ident[EI_CLASS]);
+	case ELFCLASS32:
+		printf("ELF32\n");
+		break;
+	case ELFCLASS64:
+		printf("ELF64\n");
+		break;
+	default:
+		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
 
@@ -95,17 +95,17 @@ void print_data(unsigned char *e_ident)
 
 	switch (e_ident[EI_DATA])
 	{
-		case ELFDATANONE:
-			printf("none\n");
-			break;
-		case ELFDATA2LSB:
-			printf("2's complement, little endian\n");
-			break;
-		case ELFDATA2MSB:
-			printf("2's complement, big endian\n");
-			break;
-		default:
-			printf("<unknown: %x>\n", e_ident[EI_CLASS]);
+	case ELFDATANONE:
+		printf("none\n");
+		break;
+	case ELFDATA2LSB:
+		printf("2's complement, little endian\n");
+		break;
+	case ELFDATA2MSB:
+		printf("2's complement, big endian\n");
+		break;
+	default:
+		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
 
@@ -120,12 +120,12 @@ void print_version(unsigned char *e_ident)
 
 	switch (e_ident[EI_VERSION])
 	{
-		case EV_CURRENT:
-			printf(" (current)\n");
-			break;
-		default:
-			printf("\n");
-			break;
+	case EV_CURRENT:
+		printf(" (current)\n");
+		break;
+	default:
+		printf("\n");
+		break;
 	}
 }
 
@@ -181,7 +181,7 @@ void print_osabi(unsigned char *e_ident)
 void print_abi(unsigned char *e_ident)
 {
 	printf(" ABI Version:                            %d\n",
-			e_ident[EI_ABIVERSION]);
+		e_ident[EI_ABIVERSION]);
 }
 
 /**
@@ -198,23 +198,23 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 
 	switch (e_type)
 	{
-		case ET_NONE:
-			printf("NONE (None)\n");
-			break;
-		case ET_REL:
-			printf("REL (Relocatable file)\n");
-			break;
-		case ET_EXEC:
-			printf("EXEC (Executable file)\n");
-			break;
-		case ET_DYN:
-			printf("DYN (Shared object file)\n");
-			break;
-		case ET_CORE:
-			printf("CORE (Core file)\n");
-			break;
-		default:
-			printf("<unknown: %x>\n", e_type);
+	case ET_NONE:
+		printf("NONE (None)\n");
+		break;
+	case ET_REL:
+		printf("REL (Relocatable file)\n");
+		break;
+	case ET_EXEC:
+		printf("EXEC (Executable file)\n");
+		break;
+	case ET_DYN:
+		printf("DYN (Shared object file)\n");
+		break;
+	case ET_CORE:
+		printf("CORE (Core file)\n");
+		break;
+	default:
+		printf("<unknown: %x>\n", e_type);
 	}
 }
 
@@ -250,7 +250,7 @@ void close_elf(int elf)
 	if (close(elf) == -1)
 	{
 		dprintf(STDERR_FILENO,
-				"Error: Can't close fd %d\n", elf);
+			"Error: Can't close fd %d\n", elf);
 		exit(98);
 	}
 }
