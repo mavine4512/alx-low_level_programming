@@ -76,11 +76,11 @@ void print_class(unsigned char *e_ident)
 		case ELFCLASSNONE:
 			printf("none\n");
 			break;
-			case ELFCLASS32
-				printf("ELF32\n");
+		case ELFCLASS32:
+			printf("ELF32\n");
 			break;
 		case ELFCLASS64:
-			Printf("ELF64\n");
+			printf("ELF64\n");
 			break;
 		default:
 			printf("<unknown: %x>\n", e_ident[EI_CLASS]);
@@ -98,13 +98,13 @@ void print_data(unsigned char *e_ident)
 	switch (e_ident[EI_DATA])
 	{
 		case ELFDATANONE:
-			Printf("none\n");
+			printf("none\n");
 			break;
 		case ELFDATA2LSB:
-			Printf("2's complement, little endian\n");
+			printf("2's complement, little endian\n");
 			break;
 		case ELFDATA2MSB:
-			Printf("2's complement, big endian\n");
+			printf("2's complement, big endian\n");
 			break;
 		default:
 			printf("<unknown: %x>\n", e_ident[EI_CLASS]);
@@ -205,16 +205,16 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 			printf("NONE (None)\n");
 			break;
 		case ET_REL:
-			Printf("Rel (Relocatable file)\n");
+			printf("Rel (Relocatable file)\n");
 			break;
 		case ET_EXEC:
-			Printf("EXEC (Executable file)\n");
+			printf("EXEC (Executable file)\n");
 			break;
 		case ET_DYN:
-			Printf("DYN (Shared object file)\n");
+			printf("DYN (Shared object file)\n");
 			break;
 		case ET_CORE:
-			Printf("CORE (Core file)\n");
+			printf("CORE (Core file)\n");
 			break;
 		default:
 			printf("unknown: %x>\n", e_type);
@@ -228,7 +228,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
  */
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
-	Printf("  Entry point address:                  ");
+	printf("  Entry point address:                  ");
 
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
