@@ -150,7 +150,7 @@ void print_osabi(unsigned char *e_ident)
 		case ELFOSABI_HPUX:
 			printf("UNIX - HP-UX\n");
 			break;
-		case ELFOSABI_NETBSD: 
+		case ELFOSABI_NETBSD:
 			printf("UNIX - NetBSD\n");
 			break;
 		case ELFOSABI_LINUX:
