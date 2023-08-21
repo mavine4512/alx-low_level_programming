@@ -1,3 +1,3 @@
 #!/bin/bash
 gcc *.o -fPIC -shared -o libruin.so
-LD_PRELOAD=&PWD/..libgiga.so
+export LD_PRELOAD="&PWD/..libgiga.so"
