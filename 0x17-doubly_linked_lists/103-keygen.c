@@ -13,7 +13,7 @@ int f4(char *usrn, int len)
 {
 	int ch;
 	int vch;
-	unigned int rand_num;
+	unsigned int rand_num;
 
 	ch = *usrn;
 	vch = 0;
@@ -112,9 +112,9 @@ int main(int argc, char **argv)
                 vch = vch + 1;
         }
 	keygen[2] = ((char *)alph)[(ch ^ 85) & 63];
-	keygen[3] = ((char *)alph)[f4(arg[1], len)];
-	keygen[4] = ((char *)alph)[f5(arg[1], len)];
-	keygen[5] = ((char *)alph)[f6(arg[1])];
+	keygen[3] = ((char *)alph)[f4(argv[1], len)];
+	keygen[4] = ((char *)alph)[f5(argv[1], len)];
+	keygen[5] = ((char *)alph)[f6(argv[1])];
 	keygen[6] = '\0';
 	for (ch = 0; keygen[ch]; ch++)
 		printf("%c", keygen[ch]);
