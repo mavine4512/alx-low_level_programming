@@ -6,9 +6,10 @@
 
 /**
  * struct hash_node_s - Node of a hash table
- * @key: The key, string 
+ * @key: The key, string
  * The key is unique in the hash table
  * @value: The pointer to the next node in list
+ * @next: A pointer to the next node of the list
  */
 typedef struct hash_node_s
 {
@@ -20,7 +21,7 @@ typedef struct hash_node_s
 /**
  * struct hash_table_s - Hash table data structure
  * @size: The size of the array
- * @array: The array of size 
+ * @array: The array of size
  * Each cell of this array is a pointer to the first node of a linked list,
  * because we want our HashTable to use a Chaining collision handling
  */
@@ -42,7 +43,7 @@ void hash_table_delete(hash_table_t *ht);
  * struct shash_node_s - Node of a sorted hash table
  * @key: Key string , unique in hash table
  * @value: Value corresponding to a key
- * @next: A pointer to the next node of the list 
+ * @next: A pointer to the next node of the list
  * @sprev: A pointer to the previous element of the sorted linked list
  * @snext: A pointer to the next element of the sorted linked list
  */
