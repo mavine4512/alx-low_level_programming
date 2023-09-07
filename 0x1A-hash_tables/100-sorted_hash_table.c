@@ -21,12 +21,12 @@ shash_table_t *shash_table_create(unsigned long int size)
 
 	ht = malloc(sizeof(shash_table_t));
 	if (ht == NULL)
-		return NULL;
+		return (NULL);
 
 	ht->size = size;
 	ht->array = malloc(sizeof(shash_node_t *) * size);
 	if (ht->array == NULL)
-		return NULL;
+		return (NULL);
 	for (i = 0; i < size; i++)
 		ht->array[i] = NULL;
 	ht->shead = NULL;
@@ -48,7 +48,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	char *value_copy;
 	unsigned long int index;
 
-	if (ht == NULL || key == NULL || *key == '\0' || value == NULL) 
+	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
 	value_copy = strdup(value);
@@ -57,7 +57,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 	index = key_index((const unsigned char *)key, ht->size);
 	tmp = ht->shead;
-	while(tmp)
+	while (tmp)
 	{
 		if (strcmp(tmp->key, key) == 0)
 		{
@@ -78,7 +78,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	if (new->key == NULL)
 	{
 		free(value_copy);
-			free(new);
+		free(new);
 		return (0);
 	}
 	new->value = value_copy;
@@ -187,7 +187,10 @@ void shash_table_print_rev(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
-
+/**
+ * shash_table_delete - Delete a sorted  hash table
+ * @ht: A pointer to the sorted hash table
+ */
 void shash_table_delete(shash_table_t *ht)
 {
 	shash_table_t *head = ht;

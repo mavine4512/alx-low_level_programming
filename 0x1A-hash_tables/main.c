@@ -4,11 +4,11 @@
 #include "hash_tables.h"
 
 /**
- * main- character for code generation
+ * main - character for code generation
  *
  * Return: Always EXIT_SUCCESS
  */
-int main(void) 
+int main(void)
 {
 	hash_table_t *ht;
 
