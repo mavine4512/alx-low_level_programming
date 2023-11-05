@@ -14,4 +14,4 @@ oclean :
 	 $(RM) $(OBJ)
 fdlean : clean oclean
 
-rc : oclean all
+re : oclean all
