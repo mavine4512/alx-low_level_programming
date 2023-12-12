@@ -16,7 +16,7 @@ size_t min(size_t a, size_t b)
 }
 
 /**
- * binary_search_helper -  searches for a value in an integer array using a 
+ * binary_search_helper - searches for a value in an integer array using a
  * binary search algorithm, not guaranted to return lowest index if `value`
  * appears twice in array (modified from `binary_search`)
  * @array: pointer to first elements of array to seach
@@ -60,7 +60,7 @@ int binary_search_helper(int *array, int value,
  * @size: number of elements in array
  * @value: value to search for
  *
- * Return: first index containing `value`, or -1 if 'calue not found or 
+ * Return: first index containing `value`, or -1 if 'calue not found or
  * `array` is NULL
  */
 

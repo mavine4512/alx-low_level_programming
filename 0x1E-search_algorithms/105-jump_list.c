@@ -2,15 +2,14 @@
 
 /**
  * jump_list - Searching for an algorithm in a sorted singly
- * 	linked list of integers using jump search.
+ * linked list of integers using jump search.
  * @list: Apointer to the head of the linked list to search.
  * @size: The number of nodes in the list
  * @value: the value to search for.
  * Return: If the value is not present or the head of of list is NULL, NULL.
- * 	otherwise, a pointer to the first node where the value is located.
- * 
+ * otherwise, a pointer to the first node where the value is located.
  * Description: Prints a value every time it is compared in the list.
- * 	Uses the square root of the list size as the jump step.
+ * Uses the square root of the list size as the jump step.
  */
 listint_t *jump_list(listont_t *list, size, int value)
 {
