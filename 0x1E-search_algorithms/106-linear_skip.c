@@ -48,7 +48,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	printf("Value checked at index [%lu] = [%i]\n",
 			temp->index, temp->n);
 
-	if (temp = stop)
+	if (temp == stop)
 		return (NULL);
 	return (temp);
 }

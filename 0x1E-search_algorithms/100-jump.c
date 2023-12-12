@@ -22,7 +22,7 @@ size_t min(size_t a, size_t b)
  * a jump search algorithm
  * @array: pointerto first element of array to search
  * @size: number of elemnt in array
- * @value: value to search for 
+ * @value: value to search for
  *
  * Return: first index containing `value`, or -1 if `value` not found or
  * array is NULL

@@ -8,7 +8,7 @@
  * @size: number of elements in array
  * @value: value to search for
  *
- * Return: index containing `value`, or -1 if `value` not found or 
+ * Return: index containing `value`, or -1 if `value` not found or
  * `array` is NULL
  */
 
